@@ -18,6 +18,13 @@ mysql_select_db('torneo') or die('No se pudo seleccionar la base de datos');
 		<input type="submit" name="mostrar" value="Mostrar">
 	</form>
 <?php
+	$con=mysqli_connect("localhost", "swammj", "1989april27", "Torneo");
+	if (mysqli_connect_errno($con)){
+		echo "Failed to connect " . mysqli_connect_error();
+	}else{
+		echo "Connection Succesful";
+	}
+
 if (isset($_REQUEST['mostrar'])) {
  	# code...
  } 
