@@ -4,6 +4,12 @@
 	<title>Detalles del Partido</title>
 	<link rel="stylesheet" href="torneo2.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+		function submitform(){
+		  document.amonestados.submit();
+		  	  
+		}
+	</script>
 
 </head>
 <body>
@@ -14,10 +20,8 @@
 			</nav>
 	</header>
 
-	<section id="principal">
-		
-
-			<form name='goals' action="goleadores.php" method='post'>
+	<section id="principal">	
+		<form name='amonestados' action="torneoSeccion3.php" method='post'>		
 			<table>
 				<tr>
 					<td id="NombreEquipo">
@@ -31,7 +35,10 @@
 										}		
 										echo $golesA;
 
+
 									 ?>
+									
+									 <input id="numeroGolesA" name="numeroGolesA" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesA; ?>"/>
 								
 							</td>
 							
@@ -46,10 +53,11 @@
 										echo $golesB;
 
 									 ?>
+									  <input id="numeroGolesA"  name="numeroGolesB" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesB; ?>"/>
+									
 							</td>
 				</tr>
-			</table>
-		  </form>
+			</table>		 
 		   <h2 id="enMedio">Goleadores</h2>
 		  	<article id="score2">
 			<section id="goleadores">
@@ -104,10 +112,57 @@
 							?>
 						</table>
 					</div>
-					</section>
+				</section>		
+			<section id="amonestados">
+			<h2 id="enMedio">Tarjetas Amarillas <img src="./yellow.png"> </h2>
+			
+			<table>
+				<tr>
+					<td id="NombreEquipo">
+								España
+							</td>
+							<td >
+								
+									<input id="numeroAmarillasA" name="numeroAmarillasA" type="number" min="0" max="50" step="1" value ="0"/>
+								
+							</td>
+							
+							<td id="NombreEquipo">
+								Chile
+							</td>
+							<td>
+								<input id="numeroAmarillasB" name="numeroAmarillasB" type="number" min="0" max="50" step="1" value ="0"/>
+							</td>
+				</tr>
+			</table>
+		  
+
+		  <h2 id="enMedio">Tarjetas Rojas <img src="./red.png"> </h2>
+			
+			<table>
+				<tr>
+					<td id="NombreEquipo">
+								España
+							</td>
+							<td >
+								
+									<input id="numeroRojasA" name="numeroRojasA" type="number" min="0" max="50" step="1" value ="0"/>
+								
+							</td>
+							
+							<td id="NombreEquipo">
+								Chile
+							</td>
+							<td>
+								<input id="numeroRojasB" name="numeroRojasB" type="number" min="0" max="50" step="1" value ="0"/>
+							</td>
+				</tr>
+			</table>
+		  </form>
+		  </section>		
 		</article>	
 		<footer>
-			<a href="">	
+			<a href="javascript: submitform()">	
 				<div id="siguiente">
 					<p>Siguiente</p>
 				</div>

@@ -100,6 +100,15 @@ input[type=number]{
     border-radius:5px;
     text-align:center;
 }
+input[type=text]{
+    font-size:1em;
+    width:10em;
+    padding:3px;
+    margin:0;
+    border:1px solid #ddd;
+    border-radius:5px;
+    text-align:center;
+}
 
 
 
@@ -120,6 +129,17 @@ div#siguiente{
 	border: solid;
 	border-radius: 15px;
 }
+div#submit{
+	margin: 40px auto;
+	height: 80px;
+    width: 125px;
+	text-align: center;	
+	vertical-align: middle;
+	background-color: #006633; 		
+	border: solid;
+	border-radius: 15px;
+}
+
 p{
 	margin-top: 10px;
 	font-family: verdana;
@@ -144,7 +164,7 @@ a:hover {
 section#goleadores{
 	margin: auto;
 	width: 1100px;
-	height: 230px;
+	min-height: 300px;
 	//background-color: black;
 }
 
@@ -160,7 +180,7 @@ div#golA{
 	width: 500px;
 	min-height: 200px;
 	//background-color: red;
-	float: right;
+	float: left;
 
 }
 
@@ -170,4 +190,18 @@ section#General article div#golB{
 	//background-color: red;
 	float: right;
 
+}
+
+img{
+	width: 30px;
+	height: 50px;
+	
+}
+
+section#amonestados {
+	margin: 15px auto
+	width: auto;
+	height: auto;
+	text-align: center;
+	
 }
