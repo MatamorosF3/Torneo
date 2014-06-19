@@ -3,6 +3,23 @@
 <head>
 	<title>Detalles del Partido</title>
 	<link rel="stylesheet" href="torneo.css">
+	<script type="text/javascript">
+    	function handleEnter(inField, e) {
+			var charCode;
+			//Get key code (support for all browsers)
+			if(e && e.which){
+    			charCode = e.which;
+			}else if(window.event){
+    			e = window.event;
+    			charCode = e.keyCode;
+			}
+			if(charCode == 13) {	
+						
+   				document.getElementById("tarjetasamarillas").submit();
+   				
+			}			
+		}
+	</script>
 </head>
 
 <body>
@@ -16,27 +33,20 @@
 				<header>
 					<table>
 						<tr>
-							<td>
-								<input type=text list=TeamA >
-								<datalist id="TeamA">
-									<option>equipoA</option>
-									<option>equipoB</option>
-								</datalist>								
-
+							<td id="NombreEquipo">
+								NOMBRE A
 							</td>
 							<td >
-								<input id="numeroGoles" type="number" min="0" step="1" value ="0"/>
+								
+									<input id="numeroGoles" type="number" min="0" max="50" step="1" value ="0"/>
+								
 							</td>
 							<td id="A"></td>
-							<td>
-								<input type=text list=TeamB >
-								<datalist id="TeamB">
-									<option>equipoA</option>
-									<option>equipoB</option>
-								</datalist>			
+							<td id="NombreEquipo">
+								NOMBRE B
 							</td>
 							<td>
-								<input id="numeroGoles" type="number" min="0" step="1" value ="0"/>
+								<input id="numeroGoles" type="number" min="0" max="50" step="1" value ="0"/>
 							</td>
 						</tr>
 					</table>
@@ -72,18 +82,17 @@
 					</table>						
 					</section>
 					<header id="amarillas">
-						<form method="post">
+						<form id='tarjetasamarillas' method='post'>
 							<table >
 								<tr>
 									<td><h3>Tarjetas Amarillas</h3></td>
 									<td>
-										<input id="numeroAmarillasA" name="numeroAmarillasA" type="number" min="0" max="15" step="1" value =""/>
+										<input id="numeroAmarillasA" name="numeroAmarillasA" type="number" min="0" max="15" step="1" value ="0" a onkeypress="return handleEnter(this, event)" />
 									</td>
 									<td id="A2"></td>
 									<td>
-										<input id="numeroAmarillasB" name="numeroAmarillasB" type="number" min="0" max="15" step="1" value ="0"/>
-									</td>
-
+										<input id="numeroAmarillasB" name="numeroAmarillasB" type="number" min="0" max="15" step="1" value ="0" onkeypress="return handleEnter(this, event)" />
+									</td>									
 								</tr>
 							</table>
 						</form><br>	
@@ -98,7 +107,7 @@
 							if (isset($_POST['numeroAmarillasA'])){
     							$hasta=$_POST['numeroAmarillasA'];
 							}		
-							for($i=0;$i<=$hasta;$i++) {
+							for($i=0;$i<$hasta;$i++) {
 								echo "<tr>
 										<td>
 											<input type=text list=amarillaA >
@@ -124,7 +133,7 @@
 							if (isset($_POST['numeroAmarillasB'])){
     							$hasta=$_POST['numeroAmarillasB'];
 							}		
-							for($i=0;$i<=$hasta;$i++) {
+							for($i=0;$i<$hasta;$i++) {
 								echo "<tr>
 										<td>
 											<input type=text list=AmarillaB >
@@ -154,6 +163,9 @@
 									<td>
 										<input id="numeroRojasB" name="numeroRojasB" type="number" min="0" max="15" step="1" value ="0"/>
 									</td>
+									<td>
+										<button onclick="">Nombres</button>
+									</td>
 
 								</tr>
 							</table>
@@ -169,7 +181,7 @@
 							if (isset($_POST['numeroRojasA'])){
     							$hasta=$_POST['numeroRojasA'];
 							}		
-							for($i=0;$i<=$hasta;$i++) {
+							for($i=0;$i<$hasta;$i++) {
 								echo "<tr>
 										<td>
 											<input type=text list=rojaA >
@@ -197,7 +209,7 @@
 							if (isset($_POST['numeroRojasB'])){
     							$hasta=$_POST['numeroRojasB'];
 							}		
-							for($i=0;$i<=$hasta;$i++) {
+							for($i=0;$i<$hasta;$i++) {
 								echo "<tr>
 										<td>
 											<input type=text list=RojaB >

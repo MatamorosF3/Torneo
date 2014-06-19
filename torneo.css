@@ -28,7 +28,7 @@ header#titulo{
 }
 nav {
 	
-	margin-top: 38px;
+	margin-top: 20px;
 	width: 500px;
 	height: 50px;
 	//background-color: red;
@@ -53,7 +53,8 @@ table {
 	margin: 10px auto;    
 
     font-family: cursive,arial,sans-serif;
-    font-size:14px;
+
+    font-size:15px;
     color:#006633;
     border-width: 1px;
     border-color: #999999;
@@ -61,32 +62,38 @@ table {
     
 }
 table tr {
+	
     background:#b5cfd2 url('cell-blue.jpg');
     border-width: 1px;
-    padding: 8px;
+    padding: 5px;
     border-style: solid;
     border-color: #999999;
 }
 table td#A{
-	width: 70%;
+	width: 65%;
 }
 table td#A2{
 	width: 65%;
 }
 
+
 table td {
     background:#dcddc0 url('cell-grey.jpg');
+    height: 50px;
+    text-align: center;
     border-width: 1px;
-    padding: 8px;
+    padding: 5px;
+    padding-bottom: 15px;
     border-style: solid;
     border-color: #999999;
 }
 
+
 section#General header{
 	overflow: hidden;
 	margin:10px auto;
-	width: 1000px;
-	height: 57px;
+	width: 1050px;
+	height: 95px;
 	//background-color: red;
 }
 
@@ -99,7 +106,7 @@ section#General article{
 
 section#General article header{
 	width: 1100px;
-	height: 30px;
+	height: 40px;
 
 	//background-color: blue;
 
@@ -113,16 +120,16 @@ section#General article header p{
 section#General article section#goles{
 	overflow: hidden;
 	margin:10px auto;
-	width: 1000px;
-	height: 50px;
-	//background-color: grey;
+	width: 1050px;
+	height: 95px;
+	background-color: grey;
 }
 
 section#General article header#amarillas{
 	overflow: hidden;
 	margin:10px auto;
 	width: 1100px;
-	height: 55px;
+	height: 95px;
 	//background-color: green;
 }
 
@@ -161,7 +168,7 @@ section#General article header#rojitas{
 	overflow: hidden;
 	margin:10px auto;
 	width: 1100px;
-	height: 55px;
+	height: 95px;
 	//background-color: green;
 }
 
