@@ -13,6 +13,7 @@
 
 
 <?php
+//probar que pasaS
 require("conexionBD.php");
 
 // Realizar una consulta MySQL
