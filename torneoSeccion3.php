@@ -69,21 +69,39 @@
 						<tr>
 							<td><h3>Nombre</h3></td>
 						</tr>
-						<?php					
+						<?php
+							require("ConexionBD.php");
+								$query = "SELECT Nombre FROM jugadores WHERE IdTorneo = 1 AND IdEquipo = 1";
+								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());						
 							if (isset($_POST['numeroAmarillasA'])){
     							$hasta=$_POST['numeroAmarillasA'];
 							}		
 							for($i=0;$i<$hasta;$i++) {
 								
-								echo "<tr>
-										<td>
-											<input type=text list=amaA >
-											<datalist id=amaA >
-											<option>JugadorA-A 1</option>
-											<option>JugadorA-A 2</option>
-											</datalist>	
+																echo "<tr>
+										<td>"
+										?>
 
-										</td>
+
+
+											<input type="text" list="amaA" name="amarillasA[]">
+											<datalist id="amaA">
+
+										<?php	
+
+											while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+ 		 
+    										foreach ($line as $col_value) {
+        									
+        									echo '<option value ="'.$col_value.'">';
+    										}
+    
+    										
+											}
+										?>
+											</datalist>	
+										<?php
+										echo "</td>
 										</tr>
 										";}
 									

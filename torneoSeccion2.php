@@ -66,7 +66,13 @@
 						<tr>
 							<td><h3>Nombre</h3></td>
 						</tr>
-						<?php					
+						<?php	
+
+										require("conexionBD.php");
+
+								$query = "SELECT Nombre FROM jugadores WHERE IdTorneo = 1 AND IdEquipo = 1";
+								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
+
 							if (isset($_POST['numeroGolesA'])){
     							$hasta=$_POST['numeroGolesA'];
 							}		
@@ -75,25 +81,31 @@
 								echo "<tr>
 										<td>"
 										?>
+
+
+
 											<input type="text" list="golesA" name="golesA[]">
 											<datalist id="golesA">
-											<option value=<?php echo "JugadorA1"?> >
-											<option value=<?php echo "JugadorA2"?> >
+
+										<?php	
+
+											while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+ 		 
+    										foreach ($line as $col_value) {
+        									
+        									echo '<option value ="'.$col_value.'">';
+    										}
+    
+    										
+											}
+										?>
 											</datalist>	
 										<?php
 										echo "</td>
 										</tr>
 										";} 
-
+										mysql_free_result($result);
 										?>
-										
-										
-							
-							
-
-
-
-							
 
 						</table>
 					</div>
@@ -106,21 +118,43 @@
 						<?php					
 							if (isset($_POST['numeroGolesB'])){
     							$hasta=$_POST['numeroGolesB'];
-							}		
-							for($i=0;$i<$hasta;$i++) {
-								echo "<tr>
-										<td>
-											<input type=text list=golesB >
-											<datalist id=golesB>
-											<option value= JugadorB 1>JugadorB 1</option>
-											<option value= JugadorB 2>JugadorB 2</option>
-											</datalist>	
 
-										</td>
+							}	
+
+
+								$query = "SELECT Nombre FROM jugadores WHERE IdTorneo = 1 AND IdEquipo = 2";
+								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
+	
+														for($i=0;$i<$hasta;$i++) {
+
+								echo "<tr>
+										<td>"
+										?>
+
+
+
+											<input type="text" list="golesB" name="golesB[]">
+											<datalist id="golesB">
+
+										<?php	
+
+											while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+ 		 
+    										foreach ($line as $col_value) {
+        									
+        									echo '<option value ="'.$col_value.'">';
+    										}
+    
+    										
+											}
+										?>
+											</datalist>	
+										<?php
+										echo "</td>
 										</tr>
-										";}
-									
-							?>
+										";} 
+
+										?>
 						</table>
 					</div>
 				</section>		
