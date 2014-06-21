@@ -71,22 +71,33 @@
     							$hasta=$_POST['numeroGolesA'];
 							}		
 							for($i=0;$i<$hasta;$i++) {
-								echo "<tr>
-										<td>
-											<input type=text list=golesA >
-											<datalist id=golesA>
-											<option>JugadorA 1</option>
-											<option>JugadorA 2</option>
-											</datalist>	
 
-										</td>
+								echo "<tr>
+										<td>"
+										?>
+											<input type="text" list="golesA" name="golesA[]">
+											<datalist id="golesA">
+											<option value=<?php echo "JugadorA1"?> >
+											<option value=<?php echo "JugadorA2"?> >
+											</datalist>	
+										<?php
+										echo "</td>
 										</tr>
-										";}
-									
-							?>
+										";} 
+
+										?>
+										
+										
+							
+							
+
+
+
+							
+
 						</table>
 					</div>
-
+						
 					<div id="golB">
 					<table>
 						<tr>
@@ -101,8 +112,8 @@
 										<td>
 											<input type=text list=golesB >
 											<datalist id=golesB>
-											<option>JugadorB 1</option>
-											<option>JugadorB 2</option>
+											<option value= JugadorB 1>JugadorB 1</option>
+											<option value= JugadorB 2>JugadorB 2</option>
 											</datalist>	
 
 										</td>
@@ -114,7 +125,7 @@
 					</div>
 				</section>		
 			<section id="amonestados">
-			<h2 id="enMedio">Tarjetas Amarillas <img src="./yellow.png"> </h2>
+			<h2 id="enMedio">Tarjetas Amarillas <img src="http://swammyjose.1eko.com/yellow.png"> </h2>
 			
 			<table>
 				<tr>
@@ -137,7 +148,7 @@
 			</table>
 		  
 
-		  <h2 id="enMedio">Tarjetas Rojas <img src="./red.png"> </h2>
+		  <h2 id="enMedio">Tarjetas Rojas <img src="http://swammyjose.1eko.com/red.png"> </h2>
 			
 			<table>
 				<tr>

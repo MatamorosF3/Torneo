@@ -50,8 +50,18 @@
 									 ?>
 							</td>
 				</tr>
-			</table>		 
-		   <h2 id="enMedio">Amonestados por Amarilla <img src="./yellow.png"></h2>
+			</table>
+			
+			<!-- AQui Esta papa lo de recopilar los datos!! -->
+			<?php				
+				if($_POST) {
+					foreach ($_POST['golesA'] as $value) {
+						echo $value."</br>";   			
+					}
+				}
+			?>	
+
+		   <h2 id="enMedio">Amonestados por Amarilla <img src="yellow.png"></h2>
 		  	<article id="score2">
 			<section id="goleadores">
 					<div id="golA">
@@ -64,10 +74,11 @@
     							$hasta=$_POST['numeroAmarillasA'];
 							}		
 							for($i=0;$i<$hasta;$i++) {
+								
 								echo "<tr>
 										<td>
 											<input type=text list=amaA >
-											<datalist id=amaA>
+											<datalist id=amaA >
 											<option>JugadorA-A 1</option>
 											<option>JugadorA-A 2</option>
 											</datalist>	
@@ -79,7 +90,7 @@
 							?>
 						</table>
 					</div>
-
+					
 					<div id="golB">
 					<table>
 						<tr>
@@ -107,7 +118,7 @@
 					</div>
 				</section>		
 			<section id="amonestados">
-			<h2 id="enMedio">Amonestados por Rojas <img src="./red.png"> </h2>
+			<h2 id="enMedio">Amonestados por Rojas <img src="red.png"> </h2>
 			 <section id="goleadores">
 					<div id="golA">
 					<table>
