@@ -15,9 +15,11 @@ body {
 section#principal{
 	overflow: hidden;
 	margin: auto;
+
 	background:none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
 	width: auto;
 	height: auto;
+	vertical-align: middle;
 	
 }
 
@@ -118,6 +120,13 @@ article#score{
 article#score2{
 	margin-top: 60px;
 }
+article#sent{
+	margin: auto;	
+	width: 100%;
+	height: 450px;
+	vertical-align: text-bottom;
+
+}
 
 div#siguiente{
 	margin: 40px auto;
@@ -127,6 +136,16 @@ div#siguiente{
 	vertical-align: middle;
 	background-color: #006633; 		
 	border: solid;
+	border-radius: 15px;
+}
+div#enviados{
+	margin: auto;
+	height: 250px;
+    width: 350px;
+	text-align: center;	
+	//vertical-align: bottom;
+	background-color: #006633; 		
+	border: 10px solid;
 	border-radius: 15px;
 }
 div#submit{
@@ -141,11 +160,12 @@ div#submit{
 }
 
 p{
-	margin-top: 13px;
+	//margin-top: 13px;
 	font-family: verdana;
 	font-size: 20px;
 	color: white;
 	text-align: center;
+	vertical-align: bottom;
 }
 
 a {

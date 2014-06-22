@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script type="text/javascript">
 			function submitform(){
-				document.amonestados.submit();
+				document.enviados.submit();
 			}
 		</script>
 
@@ -66,6 +66,7 @@
 			</table>
 			
 			 <h2 id="enMedio">Goleadores</h2>
+			 <form name='enviados' action="datosenviados.php" method='post'>
 		  	<article id="score2">
 			<section id="goleadores">
 					<div id="golA">
@@ -353,7 +354,7 @@
 							</div>
 						</section>		
 					</article>	
-					
+					</form>
 					<footer>
 					<!-- <script type="text/javascript">
 					function guardar(){
