@@ -28,7 +28,7 @@
 			
 			?>	
 		 
-			<h1>Datos enviado exitosamente</h1>
+			<h1>Revisión de Datos</h1>
 		</header>
 
 		<section id="principal">	
@@ -365,8 +365,8 @@
 					}
 					</script> -->
 						<a href="javascript: submitform()">	
-							<div id="siguiente" >
-								<p>Siguiente</p>
+							<div id="submit" >
+								<p>Enviar Datos</p>
 							</div>
 						</a>
 					</footer>
