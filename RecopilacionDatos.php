@@ -92,7 +92,7 @@
 
 
 											<input type="text" list="golesA" name="golesA[]" value="<?php if($_POST) 
-													 echo $_POST['golesA'][$i];	?>" disabled>
+													 echo $_POST['golesA'][$i];	?>" readonly="readonly">
 										
 											
 
@@ -145,7 +145,7 @@
 
 
 											<input type="text" list="golesB" name="golesB[]" value="<?php if($_POST) 
-													 echo $_POST['golesB'][$i];	?>	" disabled/>
+													 echo $_POST['golesB'][$i];	?>	" readonly="readonly"/>
 											
 											
 
@@ -199,7 +199,7 @@
 									?>
 
 									<input type="text" list="amarillasA" name="amarillasA[]" value="<?php if($_POST) 
-													 echo $_POST['amarillasA'][$i];	?>	" disabled/>
+													 echo $_POST['amarillasA'][$i];	?>	" readonly="readonly"/>
 									
 									
 
@@ -244,7 +244,7 @@
 								<td>"
 									?>
 									<input type="text" list="amarillasB" name="amarillasB[]" value="<?php if($_POST) 
-													 echo $_POST['amarillasB'][$i];	?>	"disabled/>
+													 echo $_POST['amarillasB'][$i];	?>	" readonly="readonly"/>
 									
 									
 
@@ -289,8 +289,8 @@
 								echo "<tr>
 								<td>"
 									?>
-									<input type="text" list="rojasA" name="rajasA[]" value="<?php if($_POST) 
-													 echo $_POST['rojasA'][$i];	?>	" disabled/>
+									<input type="text" list="rojasA" name="rojasA[]" value="<?php if($_POST) 
+													 echo $_POST['rojasA'][$i];	?>	" readonly="readonly"/>
 									
 										<?php	
 										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
@@ -330,7 +330,7 @@
 								<td>"
 									?>
 									<input type="text" list="rojasB" name="rojasB[]" value="<?php if($_POST) 
-													 echo $_POST['rojasB'][$i];	?>	"disabled/>
+													 echo $_POST['rojasB'][$i];	?>	" readonly="readonly"/>
 									
 									
 
