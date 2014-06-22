@@ -12,13 +12,14 @@
 
 	</head>
 	<body>
+
 		<header id="titulo">
 			<h1>Resultado del Partido</h1>
 			<nav>
 				<h2>Detalles</h2>
 			</nav>
 		</header>
-
+		<form name='amonestados' action="RecopilacionDatos.php" method='post'>
 		<section id="principal">			
 			<table>
 				<tr>
@@ -32,9 +33,9 @@
 							$golesA=$_POST['numeroGolesA'];
 						}		
 						echo $golesA;
-
+						
 						?>
-
+						<input id="numeroGolesA" name="numeroGolesA" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesA; ?>"/>
 					</td>
 
 					<td id="NombreEquipo">
@@ -48,6 +49,7 @@
 						echo $golesB;
 
 						?>
+						<input id="numeroGolesA"  name="numeroGolesB" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesB; ?>"/>
 					</td>
 				</tr>
 			</table>
@@ -56,7 +58,14 @@
 			<?php				
 			if($_POST) {
 				foreach ($_POST['golesA'] as $value) {
-					echo $value."</br>";   			
+					echo "<input type='hidden' list='golesA' name='golesA[]' value=".$value.">";   			
+				}
+			}
+			?>	
+			<?php				
+			if($_POST) {
+				foreach ($_POST['golesB'] as $value) {
+					echo "<input type='hidden' list='golesB' name='golesB[]' value=".$value.">";   			
 				}
 			}
 			?>	
@@ -70,31 +79,36 @@
 								<td><h3>Nombre</h3></td>
 							</tr>
 							<?php
-							require("ConexionBD.php");
+							/* require("ConexionBD.php");
 							$idPartido = 12;
 							//require("torneoSeccion2.php");
 								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoA from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida AAA".mysql_error());						
+							$result = mysql_query($query) or die ("Consulta fallida AAA".mysql_error());	*/					
 							if (isset($_POST['numeroAmarillasA'])){
-								$hasta=$_POST['numeroAmarillasA'];
+								$hasta1=$_POST['numeroAmarillasA'];
 							}		
-							for($i=0;$i<$hasta;$i++) {
+
+							for($i=0;$i<$hasta1;$i++) {
 
 								echo "<tr>
 								<td>"
 									?>
-
-									<input type="text" list="amarillasA" name="amarillasA[]">
+									<input id="numeroAmarillasA" name="numeroAmarillasA" type="hidden" min="0" max="50" step="1" value ="<?php echo $hasta1; ?>"/>
+									 
+									 <input type="text" list="amarillasA" name="amarillasA[]">
 									<datalist id="amarillasA">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
+
+										echo '<option value ="AmonestadoAA1">';
+										echo '<option value ="AmonestadoAA2">';
 										?>
 
 									</datalist>	
@@ -115,28 +129,31 @@
 								</tr>
 								<?php					
 								if (isset($_POST['numeroAmarillasB'])){
-									$hasta=$_POST['numeroAmarillasB'];
+									$hasta2=$_POST['numeroAmarillasB'];
 								}		
 
-								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoB from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
-								for($i=0;$i<$hasta;$i++) {
+							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
+								for($i=0;$i<$hasta2;$i++) {
 								
 								echo "<tr>
 								<td>"
 									?>
+									<input id="numeroAmarillasB" name="numeroAmarillasB" type="hidden" min="0" max="50" step="1" value ="<?php echo $hasta2; ?>"/>
 
 									<input type="text" list="amarillasB" name="amarillasB[]">
 									<datalist id="amarillasB">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+									/*	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
+										echo '<option value ="AmonestadoBA1">';
+										echo '<option value ="AmonestadoBA2">';
 										?>
 
 									</datalist>	
@@ -145,7 +162,7 @@
 									echo "</td>
 								</tr>";}
 
-								mysql_free_result($result);
+								//mysql_free_result($result);
 
 								?>
 							</table>
@@ -161,28 +178,32 @@
 									</tr>
 									<?php					
 									if (isset($_POST['numeroRojasA'])){
-										$hasta=$_POST['numeroRojasA'];
+										$hasta3=$_POST['numeroRojasA'];
 									}		
 
-								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoA from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
-									for($i=0;$i<$hasta;$i++) {
+							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
+									for($i=0;$i<$hasta3;$i++) {
 									
 								echo "<tr>
 								<td>"
 									?>
+									
+									<input id="numeroRojasA" name="numeroRojasA" type="hidden" min="0" max="50" step="1" value ="<?php echo $hasta3; ?>"/>
 
 									<input type="text" list="rojasA" name="rojasA[]">
 									<datalist id="rojasA">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
+										echo '<option value ="AmonestadoAR1">';
+										echo '<option value ="AmonestadoAR2">';
 										?>
 
 									</datalist>	
@@ -191,7 +212,7 @@
 									echo "</td>
 								</tr>";}
 
-								mysql_free_result($result);
+								//mysql_free_result($result);
 
 								?>
 								</table>
@@ -204,27 +225,29 @@
 									</tr>
 									<?php					
 									if (isset($_POST['numeroRojasB'])){
-										$hasta=$_POST['numeroRojasB'];
+										$hasta4=$_POST['numeroRojasB'];
 									}		
-								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoB from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
-									for($i=0;$i<$hasta;$i++) {
+							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
+									for($i=0;$i<$hasta4;$i++) {
 									
 								echo "<tr>
 								<td>"
 									?>
-
+									<input id="numeroRojasB" name="numeroRojasB" type="hidden" min="0" max="50" step="1" value ="<?php echo $hasta4; ?>"/>
 									<input type="text" list="rojasB" name="rojasB[]">
 									<datalist id="rojasB">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
+										echo '<option value ="AmonestadoBR1">';
+										echo '<option value ="AmonestadoBR2">';
 										?>
 
 									</datalist>	
@@ -242,22 +265,22 @@
 					</article>	
 					
 					<footer>
-					<script type="text/javascript">
+					<!-- <script type="text/javascript">
 					function guardar(){
 						<?php
-						echo "Lets go";
+						//echo "Lets go";
 
 						?>
 
 					}
-					</script>
-						<a href="RecopilacionDatos.php">	
-
-							<div id="submit" >
-								<p>Enviar Datos</p>
+					</script> -->
+						<a href="javascript: submitform()">	
+							<div id="siguiente" >
+								<p>Siguiente</p>
 							</div>
 						</a>
 					</footer>
 				</section>
+				</form>
 			</body>
 			</html>
