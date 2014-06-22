@@ -34,13 +34,13 @@
     										$golesA=$_POST['numeroGolesA'];
 										}	
 										echo $golesA;
-										/*		
+											
 										require("conexionBD.php");
 										//require("torneo2_1.html");
 										$idPartido = 12;
 										$query = 'UPDATE partidos SET GolesA ='.$golesA.' WHERE IdPartido = '.$idPartido;
 										$result = mysql_query($query) or die("Fallo en consulta".mysql_error());
-										echo $golesA;*/
+										echo $golesA;
 									 ?>
 									
 									 <input id="numeroGolesA" name="numeroGolesA" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesA; ?>"/>
@@ -56,11 +56,11 @@
     										$golesB =$_POST['numeroGolesB'];
 										}		
 										echo $golesB;
-										/*
+										
 										$idPartido = 12;
 										$query = 'UPDATE partidos SET GolesB ='.$golesB.' WHERE IdPartido = '.$idPartido;
 										$result = mysql_query($query) or die("Fallo en consulta".mysql_error());
-										*/
+										
 										
 
 									 ?>
@@ -78,11 +78,12 @@
 							<td><h3>Nombre</h3></td>
 						</tr>
 						<?php	
-							/*
+							
 								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoA from partidos WHERE IdPartido = '.$idPartido.')';
-								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
+								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
+
 
 							if (isset($_POST['numeroGolesA'])){
     							$hasta=$_POST['numeroGolesA'];
@@ -99,7 +100,7 @@
 											<datalist id="golesA">
 
 										<?php	
-											/*
+											
 											while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
  		 
     										foreach ($line as $col_value) {
@@ -108,16 +109,15 @@
     										}
     
     										
-											}*/
-											echo '<option value ="JugadorA1">';
-											echo '<option value ="JugadorA2">';
+											}
+											
 										?>
 											</datalist>	
 										<?php
 										echo "</td>
 										</tr>
 										";} 
-										//mysql_free_result($result);
+										mysql_free_result($result);
 										?>
 
 						</table>
@@ -135,10 +135,10 @@
 							}	
 
 
-								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoB from partidos WHERE IdPartido = '.$idPartido.')';
-								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
+								$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
 	
 														for($i=0;$i<$hasta;$i++) {
 
@@ -153,7 +153,7 @@
 
 										<?php	
 
-										/*	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+											while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
  		 
     										foreach ($line as $col_value) {
         									
@@ -161,9 +161,8 @@
     										}
     
     										
-											}*/
-											echo '<option value ="JugadorB1">';
-											echo '<option value ="JugadorB2">';
+											}
+											
 										?>
 											</datalist>	
 										<?php
