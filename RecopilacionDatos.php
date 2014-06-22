@@ -91,7 +91,7 @@
 
 
 											<input type="text" list="golesA" name="golesA[]" value="<?php if($_POST) 
-													 echo $_POST['golesA'][$i];	?>	">
+													 echo $_POST['golesA'][$i];	?>" disabled>
 										
 											
 
@@ -144,7 +144,7 @@
 
 
 											<input type="text" list="golesB" name="golesB[]" value="<?php if($_POST) 
-													 echo $_POST['golesB'][$i];	?>	"/>
+													 echo $_POST['golesB'][$i];	?>	" disabled/>
 											
 											
 
@@ -198,7 +198,7 @@
 									?>
 
 									<input type="text" list="amarillasA" name="amarillasA[]" value="<?php if($_POST) 
-													 echo $_POST['amarillasA'][$i];	?>	"/>
+													 echo $_POST['amarillasA'][$i];	?>	" disabled/>
 									
 									
 
@@ -243,7 +243,7 @@
 								<td>"
 									?>
 									<input type="text" list="amarillasB" name="amarillasB[]" value="<?php if($_POST) 
-													 echo $_POST['amarillasB'][$i];	?>	"/>
+													 echo $_POST['amarillasB'][$i];	?>	"disabled/>
 									
 									
 
@@ -289,7 +289,7 @@
 								<td>"
 									?>
 									<input type="text" list="rojasA" name="rajasA[]" value="<?php if($_POST) 
-													 echo $_POST['rojasA'][$i];	?>	"/>
+													 echo $_POST['rojasA'][$i];	?>	" disabled/>
 									
 										<?php	
 										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
@@ -329,7 +329,7 @@
 								<td>"
 									?>
 									<input type="text" list="rojasB" name="rojasB[]" value="<?php if($_POST) 
-													 echo $_POST['rojasB'][$i];	?>	"/>
+													 echo $_POST['rojasB'][$i];	?>	"disabled/>
 									
 									
 
