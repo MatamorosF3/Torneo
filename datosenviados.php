@@ -13,7 +13,15 @@
 				<h2>Detalles</h2>
 			</nav>
 	</header>
+
 	<p>golesA</p>
+	<?php 
+		if (isset($_POST['numeroGolesA'])){
+			$golesA=$_POST['numeroGolesA'];
+		}		
+			echo $golesA;
+
+	?>
 	<?php if($_POST) 
 		foreach ($_POST['golesA'] as $value) {
 			 echo $value."<br>";	
@@ -21,6 +29,14 @@
 			
 	?>
 	<p>golesB</p>
+	<?php 
+		if (isset($_POST['numeroGolesB'])){
+			$golesB =$_POST['numeroGolesB'];
+		}		
+			echo $golesB;
+
+	?>
+	
 	<?php if($_POST) 
 		foreach ($_POST['golesB'] as $value) {
 			 echo $value."<br>";	

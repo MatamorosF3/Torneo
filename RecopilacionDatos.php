@@ -47,6 +47,7 @@
 						echo $golesA;
 
 						?>
+						<input id="numeroGolesA" name="numeroGolesA" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesA; ?>"/>
 
 					</td>
 
@@ -61,6 +62,7 @@
 						echo $golesB;
 
 						?>
+						<input id="numeroGolesA"  name="numeroGolesB" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesB; ?>"/>
 					</td>
 				</tr>
 			</table>
@@ -74,6 +76,7 @@
 						<tr>
 							<td><h3>Nombre</h3></td>
 						</tr>
+		
 						<?php	
 							/*
 								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
@@ -83,7 +86,10 @@
 
 							if (isset($_POST['numeroGolesA'])){
     							$hasta1=$_POST['numeroGolesA'];
-							}		
+							}	
+											
+			
+					
 							for($i=0;$i<$hasta1;$i++) {
 
 								echo "<tr>
@@ -347,7 +353,7 @@
 									echo "</td>
 								</tr>";}
 
-								mysql_free_result($result);
+								//mysql_free_result($result);
 
 								?>
 								</table>

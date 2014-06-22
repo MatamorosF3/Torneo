@@ -36,11 +36,11 @@
 										echo $golesA;
 											
 										require("conexionBD.php");
-										//require("torneo2_1.html");
+										require("torneo2_1.html");
 										$idPartido = 12;
 										$query = 'UPDATE partidos SET GolesA ='.$golesA.' WHERE IdPartido = '.$idPartido;
 										$result = mysql_query($query) or die("Fallo en consulta".mysql_error());
-										echo $golesA;
+										
 									 ?>
 									
 									 <input id="numeroGolesA" name="numeroGolesA" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesA; ?>"/>
@@ -110,6 +110,9 @@
     
     										
 											}
+											echo '<option value ="swammy Jose">';
+											echo '<option value ="Fernando Peckerman">';
+
 											
 										?>
 											</datalist>	

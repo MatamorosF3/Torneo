@@ -58,14 +58,19 @@
 			<?php				
 			if($_POST) {
 				foreach ($_POST['golesA'] as $value) {
-					echo "<input type='hidden' list='golesA' name='golesA[]' value=".$value.">";   			
+			?>
+					<input type="hidden" list="golesA" name="golesA[]" value="<?php echo $value; ?> "/>   
+					
+			<?php
 				}
 			}
-			?>	
+			?>
 			<?php				
 			if($_POST) {
 				foreach ($_POST['golesB'] as $value) {
-					echo "<input type='hidden' list='golesB' name='golesB[]' value=".$value.">";   			
+			?>
+					<input type='hidden' list='golesB' name='golesB[]' value="<?php echo $value; ?> "/>   	
+			<?php		
 				}
 			}
 			?>	
@@ -81,11 +86,11 @@
 							<?php
 							require("ConexionBD.php");
 							$idPartido = 12;
-							//require("torneoSeccion2.php");
+							require("torneoSeccion2.php");
 								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoA from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida AAA".mysql_error());					
+							$result = mysql_query($query) or die ("Consulta fallida AAA".mysql_error());				
 							if (isset($_POST['numeroAmarillasA'])){
 								$hasta1=$_POST['numeroAmarillasA'];
 							}		
@@ -243,8 +248,7 @@
 												echo '<option value ="'.$col_value.'">';
 											}
 										}
-										echo '<option value ="AmonestadoBR1">';
-										echo '<option value ="AmonestadoBR2">';
+										
 										?>
 
 									</datalist>	
@@ -253,7 +257,7 @@
 									echo "</td>
 								</tr>";}
 
-								mysql_free_result($result);
+								//mysql_free_result($result);
 
 								?>
 								</table>
@@ -262,15 +266,7 @@
 					</article>	
 					
 					<footer>
-					<script type="text/javascript">
-					function guardar(){
-						<?php
-						echo "Lets go";
-
-						?>
-
-					}
-					</script> -->
+					
 						<a href="javascript: submitform()">	
 							<div id="siguiente" >
 								<p>Siguiente</p>
