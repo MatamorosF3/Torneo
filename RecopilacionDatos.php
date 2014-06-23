@@ -30,7 +30,7 @@
 		 
 			<h1>Revisión de Datos</h1>
 		</header>
-
+		 <form name='enviados' action="datosenviados.php" method='post'>
 		<section id="principal">	
 
 			<table>
@@ -47,6 +47,7 @@
 						echo $golesA;
 
 						?>
+						
 						<input id="numeroGolesA" name="numeroGolesA" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesA; ?>"/>
 
 					</td>
@@ -62,13 +63,13 @@
 						echo $golesB;
 
 						?>
-						<input id="numeroGolesA"  name="numeroGolesB" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesB; ?>"/>
+						<input id="numeroGolesB"  name="numeroGolesB" type="hidden" min="0" max="50" step="1" value ="<?php echo $golesB; ?>"/>
 					</td>
 				</tr>
 			</table>
 			
 			 <h2 id="enMedio">Goleadores</h2>
-			 <form name='enviados' action="datosenviados.php" method='post'>
+			
 		  	<article id="score2">
 			<section id="goleadores">
 					<div id="golA">

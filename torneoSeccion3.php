@@ -84,13 +84,13 @@
 								<td><h3>Nombre</h3></td>
 							</tr>
 							<?php
-							require("ConexionBD.php");
+							/*require("ConexionBD.php");
 							$idPartido = 12;
-							require("torneoSeccion2.php");
+							//require("torneoSeccion2.php");
 								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoA from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida AAA".mysql_error());				
+							$result = mysql_query($query) or die ("Consulta fallida AAA".mysql_error());	*/				
 							if (isset($_POST['numeroAmarillasA'])){
 								$hasta1=$_POST['numeroAmarillasA'];
 							}		
@@ -106,11 +106,11 @@
 									<datalist id="amarillasA">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
 
 										
 										?>
@@ -136,10 +136,10 @@
 									$hasta2=$_POST['numeroAmarillasB'];
 								}		
 
-								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoB from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
+							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
 								for($i=0;$i<$hasta2;$i++) {
 								
 								echo "<tr>
@@ -151,11 +151,11 @@
 									<datalist id="amarillasB">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
 										
 										?>
 
@@ -165,7 +165,7 @@
 									echo "</td>
 								</tr>";}
 
-								mysql_free_result($result);
+								//mysql_free_result($result);
 
 								?>
 							</table>
@@ -184,10 +184,10 @@
 										$hasta3=$_POST['numeroRojasA'];
 									}		
 
-								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoA from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
+							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
 									for($i=0;$i<$hasta3;$i++) {
 									
 								echo "<tr>
@@ -200,11 +200,11 @@
 									<datalist id="rojasA">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+									/*	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
+										}*/
 										
 										?>
 
@@ -214,7 +214,7 @@
 									echo "</td>
 								</tr>";}
 
-								mysql_free_result($result);
+								//mysql_free_result($result);
 
 								?>
 								</table>
@@ -229,10 +229,10 @@
 									if (isset($_POST['numeroRojasB'])){
 										$hasta4=$_POST['numeroRojasB'];
 									}		
-								$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
+								/*$query = 'SELECT Nombre FROM jugadores WHERE IdTorneo = (SELECT 
 									IdTorneo from partidos WHERE IdPartido ='.$idPartido.')  AND IdEquipo = (
 									SELECT IdEquipoB from partidos WHERE IdPartido = '.$idPartido.')';
-							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	
+							$result = mysql_query($query) or die ("Consulta fallida".mysql_error());	*/
 									for($i=0;$i<$hasta4;$i++) {
 									
 								echo "<tr>
@@ -243,12 +243,13 @@
 									<datalist id="rojasB">
 
 										<?php	
-										while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+										/*while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 											foreach ($line as $col_value) {
 												echo '<option value ="'.$col_value.'">';
 											}
-										}
-										
+										}*/
+										echo '<option value ="AmonestadoBR 1">';
+										echo '<option value ="AmonestadoBR 2">';
 										?>
 
 									</datalist>	
@@ -266,7 +267,15 @@
 					</article>	
 					
 					<footer>
-					
+					<script type="text/javascript">
+					function guardar(){
+						<?php
+						echo "Lets go";
+
+						?>
+
+					}
+					</script> -->
 						<a href="javascript: submitform()">	
 							<div id="siguiente" >
 								<p>Siguiente</p>

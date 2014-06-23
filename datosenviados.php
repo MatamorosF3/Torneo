@@ -17,9 +17,9 @@
 	<p>golesA</p>
 	<?php 
 		if (isset($_POST['numeroGolesA'])){
-			$golesA=$_POST['numeroGolesA'];
+			$golesAr=$_POST['numeroGolesA'];
 		}		
-			echo $golesA;
+			echo $golesAr."<br>";
 
 	?>
 	<?php if($_POST) 
@@ -31,12 +31,12 @@
 	<p>golesB</p>
 	<?php 
 		if (isset($_POST['numeroGolesB'])){
-			$golesB =$_POST['numeroGolesB'];
+			$golesBr =$_POST['numeroGolesB'];
 		}		
-			echo $golesB;
+			echo $golesBr."<br>";
 
 	?>
-	
+
 	<?php if($_POST) 
 		foreach ($_POST['golesB'] as $value) {
 			 echo $value."<br>";	

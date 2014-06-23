@@ -18,7 +18,9 @@
 				<h2>Detalles</h2>
 			</nav>
 	</header>
-
+	<?php
+	  if(@$_SESSION['isAdmin']==1) :
+	?>
 	<section id="principal">
 		<article id="score">
 		  <form name='goals' action="torneoSeccion2.php" method='post'>
@@ -51,5 +53,12 @@
 			</a>
 		</footer>
 	</section>
+	<?php
+		else:
+		echo "<h1>No tiene los permisos suficientes para acceder a esta pagina. </h1> </br>";
+		header("Refresh:0; url=index.php");
+		endif;
+	?>
+
 </body>
 </html>
