@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Detalles del Partido</title>
+	<link rel="stylesheet" href="torneo2.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+		function submitform(){
+		  document.goals.submit();
+		}
+	</script>
+
+</head>
+<body>
+	<header id="titulo">
+		<h1>Resultado del Partido</h1>
+			<nav>
+				<h2>Detalles</h2>
+			</nav>
+	</header>
+
+	<section id="principal">
+		<article id="score">
+		  <form name='goals' action="ingresarDatos2.php" method='post'>
+			<table>
+				<tr>
+					<td id="NombreEquipo">
+								España
+							</td>
+							<td >
+								
+									<input id="numeroGolesA" name="numeroGolesA" type="number" min="0" max="50" step="1" value ="0"/>
+								
+							</td>
+							
+							<td id="NombreEquipo">
+								Chile
+							</td>
+							<td>
+								<input id="numeroGolesB" name="numeroGolesB" type="number" min="0" max="50" step="1" value ="0"/>
+							</td>
+				</tr>
+			</table>
+		  </form>
+		</article>	
+		<footer>
+			<a href="javascript: submitform()">	
+				<div id="siguiente">
+					<p>Siguiente</p>
+				</div>
+			</a>
+		</footer>
+	</section>
+</body>
+</html>
